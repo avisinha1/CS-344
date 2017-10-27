@@ -372,22 +372,4 @@ void randomize(char **list_in, size_t num)
    }
 }
 
-void * getTime(){      //show time on screen
-   FILE *fp = fopen("time.txt", "w+");  //write into text file
-   struct timeval usec_time; 
-   time_t now = time(0);
-   fprintf(fp, ctime(&now)); //time written to text file
-   fclose(fp);
-   
-   
-   int c;
-   FILE *file;
-   file = fopen("time.txt", "r"); //open and read file only
-   printf("\n");
-   if (file) {
-      while ((c = getc(file)) != EOF) //while loop for end of file
-         putchar(c); 
-      fclose(file);
-   }
-}
-   
+
